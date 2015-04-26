@@ -14,5 +14,6 @@
     <string name="button_B">Answer B</string>
     <string name="button_C">Answer C</string>
     <string name="button_D">Answer D</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
