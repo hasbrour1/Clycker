@@ -24,6 +24,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.newpaltz.cs.hasbrour1.clycker.MainActivity" />
         </activity>
+        <activity
+            android:name=".StartTest"
+            android:label="@string/title_activity_start_test"
+            android:parentActivityName=".TestActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.newpaltz.cs.hasbrour1.clycker.TestActivity" />
+        </activity>
+        <activity
+            android:name=".SendTestData"
+            android:label="@string/title_activity_send_test_data"
+            android:parentActivityName=".StartTest" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.newpaltz.cs.hasbrour1.clycker.StartTest" />
+        </activity>
     </application>
 
 </manifest>

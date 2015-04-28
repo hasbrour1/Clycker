@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    public final static String NAME_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
-    public final static String CODE_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
+    public final static String NAME_MESSAGE = "com.mycompany.myfirstapp.STUDENTENTEREDNAME";
+    public final static String CODE_MESSAGE = "com.mycompany.myfirstapp.ENTEREDTESTCODE";
 
     public static String studentEnteredName;
     public static String enteredTestCode;

@@ -10,10 +10,12 @@
     <string name="question_number">#1</string>
     <string name="questin_number">#1</string>
     <string name="submit_button">Submit</string>
-    <string name="button_A">Answer A</string>
-    <string name="button_B">Answer B</string>
-    <string name="button_C">Answer C</string>
-    <string name="button_D">Answer D</string>
+    <string name="button_A">A</string>
+    <string name="button_B">B</string>
+    <string name="button_C">C</string>
+    <string name="button_D">D</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_start_test">StartTest</string>
+    <string name="title_activity_send_test_data">SendTestData</string>
 
 </resources>

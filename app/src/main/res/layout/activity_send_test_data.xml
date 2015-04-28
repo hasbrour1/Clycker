@@ -4,12 +4,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="edu.newpaltz.cs.hasbrour1.clycker.TestActivity"
+    tools:context="edu.newpaltz.cs.hasbrour1.clycker.SendTestData"
     android:background="@android:color/holo_blue_light"
     android:backgroundTint="#ff83d9ff">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:id="@+id/inputText"
+    <TextView android:id="@+id/sentTest" android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </RelativeLayout>

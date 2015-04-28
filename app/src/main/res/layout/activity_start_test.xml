@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#ff83d9ff"
+    android:background="@android:color/holo_blue_light">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/questin_number"
         android:textSize="@dimen/abc_text_size_large_material"
-        android:id="@+id/textView" />
+        android:id="@+id/questNumber" />
+    <RadioGroup
+    android:id="@+id/radioAnswerGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:layout_below="@+id/questNumber"
+        android:layout_centerHorizontal="true">
+
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_A"
         android:id="@+id/radioButton"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="49dp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/questNumber"
         android:layout_centerHorizontal="true" />
 
     <RadioButton
@@ -25,7 +33,6 @@
         android:layout_height="wrap_content"
         android:text="@string/button_B"
         android:id="@+id/radioButton2"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="44dp"
         android:layout_below="@+id/radioButton"
         android:layout_alignLeft="@+id/radioButton"
@@ -37,21 +44,23 @@
         android:text="@string/button_C"
         android:id="@+id/radioButton3"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="44dp"
         android:layout_marginBottom="48dp"
         android:layout_above="@+id/radioButton4"
         android:layout_alignLeft="@+id/radioButton2"
         android:layout_alignStart="@+id/radioButton2" />
 
-    <RadioButton
+      <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_D"
         android:id="@+id/radioButton4"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="81dp"
+          android:layout_marginBottom="81dp"
         android:layout_above="@+id/submit_button"
         android:layout_alignRight="@+id/submit_button"
         android:layout_alignEnd="@+id/submit_button" />
+
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
@@ -59,9 +68,7 @@
         android:text="@string/submit_button"
         android:id="@+id/submit_button"
         android:layout_gravity="right"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/radioButton3"
-        android:layout_alignEnd="@+id/radioButton3"
-        android:layout_marginBottom="96dp" />
+        android:layout_below="@+id/radioAnswerGroup"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

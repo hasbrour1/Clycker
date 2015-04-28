@@ -22,6 +22,11 @@ import java.util.StringTokenizer;
 
 public class TestActivity extends ActionBarActivity {
 
+    public final static String NUM_OF_QUEST_MESSAGE = "com.mycompany.myfirstapp.TestActivity.NUMBOFQUESTIONS";
+    public final static String NAME_OF_STUDENT = "edu.newpaltz.cs.hasbrour1.clycker.TestActivity.STUDENTNAME";
+    public final static String TEST_CODE = "edu.newpaltz.cs.hasbrour1.clycker.TestActivity.TESTCODE";
+
+
     public String studentName;
     public String testCode;
     public static String getTest;
@@ -37,13 +42,6 @@ public class TestActivity extends ActionBarActivity {
         RetrieveFeedTask getWeb = new RetrieveFeedTask();
         getWeb.execute();
 
-        Context context = getApplicationContext();
-        CharSequence text = studentName + " " + testCode + " " + getTest;
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
     }
 
     public void displayValues(String str){
@@ -52,38 +50,37 @@ public class TestActivity extends ActionBarActivity {
     }
 
     public void startTest(String str){
-        setContentView(R.layout.activity_test);
-        TextView questNum = (TextView) findViewById(R.id.questNumber);
-        RadioButton buttonA = (RadioButton) findViewById(R.id.radioButton);
-        RadioButton buttonB = (RadioButton) findViewById(R.id.radioButton2);
-        RadioButton buttonC = (RadioButton) findViewById(R.id.radioButton3);
-        RadioButton buttonD = (RadioButton) findViewById(R.id.radioButton4);
-        Button submint = (Button) findViewById(R.id.submit_button);
-        String studentAnswer = "Student: " + studentName + "Answered: ";
+
         int numbOfQuestions = -1;
 
         //get test
         StringTokenizer st = new StringTokenizer(str);
         while (st.hasMoreTokens()) {
             String currentToken = st.nextToken();
-            if(testCode.equals(currentToken)){
-                numbOfQuestions = Integer.parseInt(st.nextToken());
-            }else{
-                st.nextToken();
+
+            if(st.hasMoreTokens() && currentToken != null) {
+                if (testCode.equals(currentToken))
+                    numbOfQuestions = Integer.parseInt(st.nextToken());
             }
         }
 
+        Context context = getApplicationContext();
+        CharSequence text = studentName + " " + testCode;
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
         if(numbOfQuestions == -1){
-            questNum.setText("No test data");
+            displayValues("No Test Data, Enter Different Test Code");
         }else{
-            questNum.setText("#1");
+            displayValues("Got Test Data, number of questions =" + numbOfQuestions);
+            Intent intent1 = new Intent(TestActivity.this, StartTest.class);
+            intent1.putExtra(NUM_OF_QUEST_MESSAGE, "" + numbOfQuestions);
+            intent1.putExtra(NAME_OF_STUDENT, studentName);
+            intent1.putExtra(TEST_CODE, testCode);
+            startActivity(intent1);
         }
-
-
-
-
-
-
     }
 
     @Override
@@ -120,7 +117,7 @@ public class TestActivity extends ActionBarActivity {
 
                 onProgressUpdate("Proccessing");
                 // Create a URL for the desired page
-                URL url = new URL("http://192.168.107.27/clycker-web/getTests.txt");
+                URL url = new URL("http://192.168.107.10/clycker-web/getTests.txt");
 
                 // Read all the text returned by the server
                 BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -149,7 +146,6 @@ public class TestActivity extends ActionBarActivity {
         protected void onPostExecute(String str) {
             displayValues(str);
             startTest(str);
-            TestActivity.getTest = str;
         }
     }
 
