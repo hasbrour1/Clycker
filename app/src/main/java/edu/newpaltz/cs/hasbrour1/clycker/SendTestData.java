@@ -40,7 +40,8 @@ public class SendTestData extends ActionBarActivity {
         SendFeedTask setWeb = new SendFeedTask();
         setWeb.execute();
 
-
+        Intent intent3 = new Intent(SendTestData.this, MainActivity.class);
+        startActivity(intent3);
     }
 
     public void displayValues(String str){
@@ -88,7 +89,7 @@ public class SendTestData extends ActionBarActivity {
              *  then issues a Bye command signaling the server to quit.
              */
             onProgressUpdate("Submitting Answers");
-            String serverurl = "192.168.107.10";
+            String serverurl = "192.168.56.1";
             int serverport = 9999;
             Socket socket = null;
             try {

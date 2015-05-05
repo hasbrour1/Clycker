@@ -14,8 +14,8 @@
     <string name="button_B">B</string>
     <string name="button_C">C</string>
     <string name="button_D">D</string>
-    <string name="title_activity_test">TestActivity</string>
-    <string name="title_activity_start_test">StartTest</string>
-    <string name="title_activity_send_test_data">SendTestData</string>
+    <string name="title_activity_test">Clycker</string>
+    <string name="title_activity_start_test">Clycker</string>
+    <string name="title_activity_send_test_data">Clycker</string>
 
 </resources>

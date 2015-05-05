@@ -64,13 +64,6 @@ public class TestActivity extends ActionBarActivity {
             }
         }
 
-        Context context = getApplicationContext();
-        CharSequence text = studentName + " " + testCode;
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
         if(numbOfQuestions == -1){
             displayValues("No Test Data, Enter Different Test Code");
         }else{
@@ -117,7 +110,7 @@ public class TestActivity extends ActionBarActivity {
 
                 onProgressUpdate("Proccessing");
                 // Create a URL for the desired page
-                URL url = new URL("http://192.168.107.10/clycker-web/getTests.txt");
+                URL url = new URL("http://192.168.56.1/clycker-web/getTests.txt");
 
                 // Read all the text returned by the server
                 BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));

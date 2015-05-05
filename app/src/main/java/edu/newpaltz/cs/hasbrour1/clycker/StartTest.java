@@ -51,9 +51,6 @@ public class StartTest extends ActionBarActivity {
         CharSequence text = studentAnswer;
         int duration = Toast.LENGTH_SHORT;
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-
 
         submitButtonListener();
     }
@@ -63,7 +60,7 @@ public class StartTest extends ActionBarActivity {
         radioGroupId = (RadioGroup) findViewById(R.id.radioAnswerGroup);
         submit = (Button) findViewById(R.id.submit_button);
 
-        questNum.setText("#1");
+        questNum.setText("Question: #1");
         numQuest = "1";
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -77,19 +74,12 @@ public class StartTest extends ActionBarActivity {
                 radioAnsButton = (RadioButton) findViewById(selectedOption);
                 studentAnswer = studentAnswer + numQuest + radioAnsButton.getText();
 
-
-                Context context = getApplicationContext();
-                CharSequence text = "" + studentAnswer;
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
                 currentNum++;
                 numQuest =  "" + currentNum;
 
                 if(currentNum <= questNumber) {
                     radioGroupId.clearCheck();
-                    questNum.setText("#" + numQuest);
+                    questNum.setText("Question: #" + numQuest);
                 }
 
                 if(currentNum == questNumber + 1){
